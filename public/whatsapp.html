@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Business API Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        #chatbox {
+            width: 40%;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 15px;
+            border: 5px solid #e1ffc7;
+            background-image: url("BG_Images/BG0.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 750px;
+            display: flex;
+            flex-direction: column;
+        }
+        .messages {
+            border-radius: 15px 15px 0 0;
+            padding: 10px;
+            height: 100%;
+            overflow-y: auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .message {
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: fit-content;
+            max-width: 80%;
+        }
+        .message.user {
+            background-color: #e1ffc7;
+            color: #333;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        .message.bot {
+            background-color: #f1f1f1;
+            color: #333;
+            align-self: flex-start;
+            margin-right: auto;
+        }
+        .input {
+            display: flex;
+            border-radius: 0 0 15px 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid #ccc;
+        }
+        .input input {
+            flex-grow: 1;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 0 0 0 10px;
+        }
+        .input button {
+            padding: 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 0 10px 0;
+        }
+        .input button:hover {
+            background-color: #45a049;
+        }
+        .timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            align-self: flex-end;
+        }
+        /* Chat container */
+        #chat-box {
+            height: 400px;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: #e5ddd5;
+            border-radius: 8px;
+        }
+
+        /* Message container */
+        .message-container {
+            display: flex;
+            margin: 8px 0;
+            max-width: 80%;
+        }
+
+        /* Sent messages (align right) */
+        .message-container.sent {
+            margin-left: auto;
+        }
+
+        /* Received messages (align left) */
+        .message-container.received {
+            margin-right: auto;
+        }
+
+        /* Message bubbles */
+        .message-bubble {
+            padding: 8px 12px;
+            border-radius: 8px;
+            position: relative;
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+
+        /* Sent message style */
+        .sent .message-bubble {
+            background-color: #dcf8c6;
+            margin-left: auto;
+        }
+
+        /* Received message style */
+        .received .message-bubble {
+            background-color: #ffffff;
+        }
+
+        /* Message text */
+        .message-text {
+            margin-bottom: 4px;
+            color: #303030;
+        }
+
+        /* Message timestamp */
+        .message-time {
+            font-size: 0.7em;
+            color: #667781;
+            text-align: right;
+        }
+
+        /* Input container */
+        .input-container {
+            display: flex;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* Message input */
+        #message-input {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 20px;
+            margin-right: 8px;
+        }
+
+        /* Send button */
+        #send-button {
+            padding: 8px 16px;
+            background-color: #25d366;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #send-button:hover {
+            background-color: #128c7e;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbox">
+        <div class="messages" id="messages"></div>
+        <div class="input">
+            <input type="text" id="userInput" placeholder="Type your message here" />
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module">
+        import WhatsAppService from './whatsappService.js';
+
+        const whatsapp = new WhatsAppService();
+        const messageSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3');
+
+        $(document).ready(async function() {
+            // Initialize WhatsApp service
+            await whatsapp.initialize();
+            
+            $('#sendBtn').click(async function() {
+                const message = $('#userInput').val().trim();
+                if (message) {
+                    try {
+                        appendMessage('user', message);
+                        await whatsapp.sendMessage(message);
+                    } catch (error) {
+                        console.error('Failed to send message:', error);
+                        // Optionally show error to user
+                        $('#messages').append(`
+                            <div class="system-message error">Failed to send message: ${error.message}</div>
+                        `);
+                    }
+                    $('#userInput').val('');
+                }
+            });
+
+            whatsapp.startMessagePolling((message) => {
+                console.log('Received message:', message);
+                appendMessage('bot', message);
+            });
+
+            // Add error handling CSS
+            $('<style>')
+                .text(`
+                    .system-message.error {
+                        color: red;
+                        text-align: center;
+                        font-size: 12px;
+                        margin: 10px 0;
+                    }
+                `)
+                .appendTo('head');
+
+            // Handle Enter key
+            $('#userInput').keypress(function(e) {
+                if (e.which == 13) {
+                    $('#sendBtn').click();
+                }
+            });
+
+            function appendMessage(sender, message) {
+                const timestamp = new Date().toLocaleTimeString([], { 
+                    hour: '2-digit', 
+                    minute: '2-digit'
+                });
+                
+                const formattedMessage = message.replace(/\n/g, '<br>');
+                $('#messages').append(`
+                    <div class="message ${sender}">
+                        <div class="message-content">${formattedMessage}</div>
+                        <div class="timestamp">${timestamp}</div>
+                    </div>
+                `);
+                $('#messages').scrollTop($('#messages')[0].scrollHeight);
+            }
+
+            function playMessageSound() {
+                messageSound.play().catch(e => console.log('Audio play failed:', e));
+            }
+        });
+
+        // Connection status handling
+        window.addEventListener('offline', function() {
+            $('#messages').append('<div class="system-message">Connection lost</div>');
+        });
+
+        window.addEventListener('online', function() {
+            $('#messages').append('<div class="system-message">Connection restored</div>');
+        });
+    </script>
+
+    <style>
+        .system-message {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+    </style>
+</body>
+</html> 

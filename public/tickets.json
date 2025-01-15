@@ -1,0 +1,46 @@
+{
+  "tickets": [
+    {
+      "ticketNumber": "PRT-308918-011",
+      "issue": "P1. Printer not turning on.",
+      "status": "Open",
+      "createdAt": "2025-01-10T13:38:28.934Z",
+      "customerPhone": "264814067806"
+    },
+    {
+      "ticketNumber": "WRT-359244-548",
+      "issue": "W2. Issues with warranty claims.",
+      "status": "Open",
+      "createdAt": "2025-01-10T13:39:19.260Z",
+      "customerPhone": "264814067806"
+    },
+    {
+      "ticketNumber": "INF-429228-571",
+      "issue": "I2. Network connection issues.",
+      "status": "Open",
+      "createdAt": "2025-01-10T13:40:29.249Z",
+      "customerPhone": "264814067806"
+    },
+    {
+      "ticketNumber": "NET-740029-160",
+      "issue": "N2. VPN not connecting.",
+      "status": "Open",
+      "createdAt": "2025-01-10T13:45:40.039Z",
+      "customerPhone": "264814067806"
+    },
+    {
+      "ticketNumber": "CLD-874123-646",
+      "issue": "C4. Password reset not working.",
+      "status": "Open",
+      "createdAt": "2025-01-10T13:47:54.135Z",
+      "customerPhone": "264814067806"
+    },
+    {
+      "ticketNumber": "INF-155447-1001",
+      "issue": "I6. Storage space issues.",
+      "status": "Open",
+      "createdAt": "2025-01-10T13:54:47.251Z",
+      "customerPhone": "264814067806"
+    }
+  ]
+}
