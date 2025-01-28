@@ -1,3 +1,99 @@
+<!--
+/**
+ * WhatsApp Support Ticket System - Web Interface
+ * 
+ * A comprehensive web-based interface for managing and testing the WhatsApp support
+ * ticket system. This interface provides real-time interaction with the WhatsApp
+ * Business API and ticket management system.
+ * 
+ * Core Functionality:
+ * - Real-time message display and sending
+ * - Chat history visualization
+ * - Ticket management and tracking
+ * - System status monitoring
+ * - Image sending capabilities
+ * - Debug and testing tools
+ * 
+ * Interface Components:
+ * 1. Chat Interface:
+ *    - Message history display
+ *    - Message input form
+ *    - Real-time updates
+ *    - Message status indicators
+ *    - Timestamp display
+ * 
+ * 2. Control Panel:
+ *    - Clear chat history button
+ *    - Clear tickets button
+ *    - Ticket display area
+ *    - System status indicators
+ * 
+ * 3. Testing Tools:
+ *    - Send image button
+ *    - Manual message sending
+ *    - Error display area
+ *    - Connection status
+ * 
+ * Technical Implementation:
+ * - Responsive grid layout
+ * - Real-time message polling
+ * - WebSocket-ready structure
+ * - Error handling and display
+ * - Persistent storage integration
+ * 
+ * Key Features:
+ * - Real-time message synchronization
+ * - Automatic message scrolling
+ * - Message sound notifications
+ * - Error handling and display
+ * - Responsive design
+ * - Cross-browser compatibility
+ * - Mobile-friendly interface
+ * 
+ * Visual Design:
+ * - WhatsApp-inspired styling
+ * - Clean and modern interface
+ * - Responsive grid layout
+ * - Custom background images
+ * - Animated transitions
+ * - Status indicators
+ * 
+ * Dependencies:
+ * - whatsappService.js: Core WhatsApp functionality
+ * - jQuery: DOM manipulation and AJAX
+ * - styles.css: Custom styling
+ * - Audio assets: Message notifications
+ * 
+ * Browser Support:
+ * - Chrome (latest)
+ * - Firefox (latest)
+ * - Safari (latest)
+ * - Edge (latest)
+ * 
+ * Performance Optimizations:
+ * - Efficient DOM updates
+ * - Debounced event handlers
+ * - Lazy loading of images
+ * - Optimized animations
+ * - Memory leak prevention
+ * 
+ * Error Handling:
+ * - Connection status monitoring
+ * - Error message display
+ * - Automatic reconnection
+ * - Graceful degradation
+ * 
+ * Security Measures:
+ * - Input sanitization
+ * - XSS prevention
+ * - CORS handling
+ * - Error message sanitization
+ * 
+ * @module whatsapp-interface
+ * @requires whatsappService.js
+ * @requires jQuery
+ */
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +103,102 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            padding: 20px;
+            background-color: #fcf7c7; /* Light yellow background */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
+        /* Main container with grid layout */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+            gap: 20px;
+            width: 100%;
+            max-width: 1500px;
+            padding: 20px;
+            align-items: center;
+        }
+
+        /* Delete Button Container */
+        .control-panel {
+            grid-column: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            height: 100%;
+        }
+
+        #deleteBtn, #clearTicketsBtn {
+            padding: 15px 25px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            width: 200px;
+            text-align: center;
+        }
+
+        #deleteBtn {
+            background-color: #ff4444;
+        }
+
+        #clearTicketsBtn {
+            background-color: #ff8c00;
+        }
+
+        #deleteBtn:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        #clearTicketsBtn:hover {
+            background-color: #cc7000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        #deleteBtn:active, #clearTicketsBtn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Chat container in center column */
         #chatbox {
-            width: 40%;
+            grid-column: 2;
+            width: 100%;
             max-width: 400px;
-            margin: auto;
+            height: 700px;
+            margin: 0 auto; /* Center in the column */
             border-radius: 15px;
             border: 5px solid #e1ffc7;
             background-image: url("BG_Images/BG0.jpg");
             background-size: cover;
             background-position: center;
-            height: 750px;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+
+        /* Future content column */
+        .future-content {
+            grid-column: 3;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .messages {
             border-radius: 15px 15px 0 0;
             padding: 10px;
@@ -34,25 +210,16 @@
             background-color: rgba(255, 255, 255, 0.8);
         }
         .message {
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 15px;
-            font-size: 16px;
+            margin: 8px 0;
+            max-width: 80%;
             display: flex;
             flex-direction: column;
-            position: relative;
-            width: fit-content;
-            max-width: 80%;
         }
         .message.user {
-            background-color: #e1ffc7;
-            color: #333;
             align-self: flex-end;
             margin-left: auto;
         }
         .message.bot {
-            background-color: #f1f1f1;
-            color: #333;
             align-self: flex-start;
             margin-right: auto;
         }
@@ -82,10 +249,13 @@
             background-color: #45a049;
         }
         .timestamp {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
-            align-self: flex-end;
+            font-size: 11px;
+            color: #667781;
+            margin-top: 2px;
+            padding: 0 4px;
+        }
+        .message.user .timestamp {
+            text-align: right;
         }
         /* Chat container */
         #chat-box {
@@ -130,7 +300,7 @@
 
         /* Received message style */
         .received .message-bubble {
-            background-color: #ffffff;
+            background-color: #E4E7EC;
         }
 
         /* Message text */
@@ -176,14 +346,159 @@
         #send-button:hover {
             background-color: #128c7e;
         }
+
+        /* Base message content style */
+        .message-content {
+            padding: 8px 12px;
+            border-radius: 7.5px;
+            position: relative;
+            word-wrap: break-word;
+            background-color: #E4E7EC; /* Default grey for incoming */
+            border-radius: 7.5px 7.5px 7.5px 0;
+            color: #303030;
+        }
+
+        /* User messages (green, right-aligned) */
+        .message.user .message-content {
+            background-color: #dcf8c6;
+            border-radius: 7.5px 7.5px 0 7.5px;
+        }
+
+        /* Bot messages (green, right-aligned) */
+        .message.bot .message-content {
+            background-color: #dcf8c6;
+            border-radius: 7.5px 7.5px 0 7.5px;
+        }
+
+        /* Message container positioning */
+        .message {
+            margin: 8px 0;
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            background: none;
+        }
+
+        /* Right alignment for user and bot messages */
+        .message.user,
+        .message.bot {
+            align-self: flex-end;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        /* Left alignment for incoming messages */
+        .message.incoming {
+            align-self: flex-start;
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        /* Timestamp styles */
+        .timestamp {
+            font-size: 11px;
+            color: #667781;
+            margin-top: 2px;
+            padding: 0 4px;
+        }
+
+        /* Right-aligned timestamps for user and bot messages */
+        .message.user .timestamp,
+        .message.bot .timestamp {
+            text-align: right;
+        }
+
+        /* Left-aligned timestamps for incoming messages */
+        .message.incoming .timestamp {
+            text-align: left;
+        }
+
+        /* Ticket Display Container */
+        .tickets-container {
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            overflow-y: auto;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .ticket-item {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .ticket-item p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .no-tickets {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        .test-button {
+            padding: 15px 25px;
+            background-color: #25d366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .test-button:hover {
+            background-color: #128c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .test-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
-    <div id="chatbox">
-        <div class="messages" id="messages"></div>
-        <div class="input">
-            <input type="text" id="userInput" placeholder="Type your message here" />
-            <button id="sendBtn">Send</button>
+    <div class="main-container">
+        <!-- Left column with buttons -->
+        <div class="control-panel">
+            <button id="deleteBtn">
+                🗑️ Clear Chat History
+            </button>
+            <button id="clearTicketsBtn">
+                🎫 Clear All Tickets
+            </button>
+            <div class="tickets-container" id="ticketsContainer">
+                <!-- Tickets will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Center column with chat -->
+        <div id="chatbox">
+            <div class="messages" id="messages"></div>
+            <div class="input">
+                <input type="text" id="userInput" placeholder="Type your message here" />
+                <button id="sendBtn">Send</button>
+            </div>
+        </div>
+
+        <!-- Right column for future content -->
+        <div class="future-content">
+            <button id="sendImageBtn" class="test-button">
+                Send Sprout Logo
+            </button>
         </div>
     </div>
 
@@ -198,15 +513,133 @@
             // Initialize WhatsApp service
             await whatsapp.initialize();
             
+            // Start ticket polling
+            startTicketPolling();
+
+            // Add delete button handler
+            $('#deleteBtn').click(async function() {
+                if (confirm('Are you sure you want to delete all chat history?')) {
+                    try {
+                        const response = await fetch('/api/clear-chat-history', {
+                            method: 'POST'
+                        });
+                        
+                        if (response.ok) {
+                            $('#messages').empty();
+                            alert('Chat history cleared successfully!');
+                            location.reload(); // Refresh the page to reset everything
+                        } else {
+                            const errorData = await response.json();
+                            alert('Failed to clear chat history: ' + (errorData.error || 'Unknown error'));
+                        }
+                    } catch (error) {
+                        console.error('Error clearing chat history:', error);
+                        alert('Error clearing chat history: ' + error.message);
+                    }
+                }
+            });
+
+            // Function to format date
+            function formatDate(dateString) {
+                const date = new Date(dateString);
+                const day = date.getDate().toString().padStart(2, '0');
+                const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                const year = date.getFullYear();
+                return `${day}/${month}/${year}`;
+            }
+
+            // Keep track of displayed tickets
+            let displayedTickets = new Set();
+
+            // Function to load and display tickets
+            async function loadTickets() {
+                try {
+                    const response = await fetch('/tickets');
+                    const data = await response.json();
+                    const container = $('#ticketsContainer');
+
+                    if (!data.tickets || data.tickets.length === 0) {
+                        container.html('<div class="no-tickets">No tickets available</div>');
+                        displayedTickets.clear(); // Reset tracking when no tickets
+                        return;
+                    }
+
+                    // Get current tickets for comparison
+                    const currentTickets = new Set(data.tickets.map(ticket => ticket.ticketNumber));
+                    
+                    // If nothing has changed, don't update
+                    if (Array.from(currentTickets).every(num => displayedTickets.has(num)) && 
+                        Array.from(displayedTickets).every(num => currentTickets.has(num))) {
+                        return;
+                    }
+
+                    // Clear container and displayedTickets if there are changes
+                    container.empty();
+                    displayedTickets = new Set();
+
+                    // Display tickets in reverse chronological order (newest first)
+                    data.tickets
+                        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+                        .forEach(ticket => {
+                            const formattedDate = formatDate(ticket.createdAt);
+                            displayedTickets.add(ticket.ticketNumber);
+                            container.append(`
+                                <div class="ticket-item">
+                                    <p><strong>Ticket Number:</strong> ${ticket.ticketNumber}</p>
+                                    <p><strong>Issue:</strong> ${ticket.issue}</p>
+                                    <p><strong>Status:</strong> ${ticket.status}</p>
+                                    <p><strong>Created:</strong> ${formattedDate}</p>
+                                    <p><strong>Customer Phone:</strong> ${ticket.customerPhone}</p>
+                                </div>
+                            `);
+                        });
+                } catch (error) {
+                    console.error('Error loading tickets:', error);
+                    $('#ticketsContainer').html('<div class="no-tickets">Error loading tickets</div>');
+                    displayedTickets.clear();
+                }
+            }
+
+            // Start polling for tickets
+            function startTicketPolling() {
+                // Load tickets immediately
+                loadTickets();
+                // Then poll every 5 seconds
+                setInterval(loadTickets, 5000);
+            }
+
+            // Modify clear tickets button handler to refresh tickets after clearing
+            $('#clearTicketsBtn').click(async function() {
+                if (confirm('Are you sure you want to delete all tickets? This action cannot be undone.')) {
+                    try {
+                        console.log('Sending clear tickets request...');
+                        const response = await fetch('/api/clear-tickets', {
+                            method: 'POST'
+                        });
+                        
+                        if (response.ok) {
+                            console.log('Tickets cleared successfully');
+                            alert('All tickets cleared successfully!');
+                            await loadTickets(); // Reload tickets after clearing
+                        } else {
+                            const errorData = await response.json();
+                            console.error('Failed to clear tickets:', errorData);
+                            alert('Failed to clear tickets: ' + (errorData.error || 'Unknown error'));
+                        }
+                    } catch (error) {
+                        console.error('Error clearing tickets:', error);
+                        alert('Error clearing tickets: ' + error.message);
+                    }
+                }
+            });
+
             $('#sendBtn').click(async function() {
                 const message = $('#userInput').val().trim();
                 if (message) {
                     try {
-                        appendMessage('user', message);
                         await whatsapp.sendMessage(message);
                     } catch (error) {
                         console.error('Failed to send message:', error);
-                        // Optionally show error to user
                         $('#messages').append(`
                             <div class="system-message error">Failed to send message: ${error.message}</div>
                         `);
@@ -215,9 +648,9 @@
                 }
             });
 
-            whatsapp.startMessagePolling((message) => {
-                console.log('Received message:', message);
-                appendMessage('bot', message);
+            whatsapp.startMessagePolling((message, isFromBot = true) => {
+                const senderType = isFromBot ? 'bot' : 'incoming';
+                appendMessage(senderType, message);
             });
 
             // Add error handling CSS
@@ -248,8 +681,10 @@
                 const formattedMessage = message.replace(/\n/g, '<br>');
                 $('#messages').append(`
                     <div class="message ${sender}">
-                        <div class="message-content">${formattedMessage}</div>
-                        <div class="timestamp">${timestamp}</div>
+                        <div class="message-content">
+                            ${formattedMessage}
+                            <div class="timestamp">${timestamp}</div>
+                        </div>
                     </div>
                 `);
                 $('#messages').scrollTop($('#messages')[0].scrollHeight);
@@ -258,6 +693,25 @@
             function playMessageSound() {
                 messageSound.play().catch(e => console.log('Audio play failed:', e));
             }
+
+            // Add image button handler
+            $('#sendImageBtn').click(async function() {
+                try {
+                    appendMessage('system', 'Sending Sprout logo...');
+                    // Use the Sprout Bot official image URL
+                    const baseUrl = window.location.protocol + '//' + window.location.host;
+                    const imageUrl = baseUrl + '/images/Sprout%20bot%20official.png';
+                    console.log('Attempting to send image with URL:', imageUrl);
+                    
+                    const result = await whatsapp.sendImage(imageUrl);
+                    console.log('Image send result:', result);
+                    
+                    appendMessage('bot', 'Sprout logo sent successfully! 🌱 Check your WhatsApp.');
+                } catch (error) {
+                    console.error('Failed to send image:', error);
+                    appendMessage('system', `Failed to send Sprout logo: ${error.message}`);
+                }
+            });
         });
 
         // Connection status handling

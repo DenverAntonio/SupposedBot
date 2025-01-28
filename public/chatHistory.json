@@ -1,0 +1,687 @@
+{
+  "messages": {
+    "incoming": [
+      {
+        "id": "msg_in_1",
+        "from": "264814067806",
+        "content": "1234",
+        "timestamp": "2025-01-28T13:17:49.318Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_2",
+        "from": "264814067806",
+        "content": "#sprout",
+        "timestamp": "2025-01-28T13:18:25.127Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_3",
+        "from": "264814067806",
+        "content": "hello",
+        "timestamp": "2025-01-28T13:18:40.421Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_4",
+        "from": "264814067806",
+        "content": "Hi",
+        "timestamp": "2025-01-28T13:21:16.181Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_5",
+        "from": "264814067806",
+        "content": "Hello",
+        "timestamp": "2025-01-28T13:21:46.186Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_6",
+        "from": "264814067806",
+        "content": "Good morning",
+        "timestamp": "2025-01-28T13:22:22.347Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_7",
+        "from": "264814067806",
+        "content": "Testingphone",
+        "timestamp": "2025-01-28T13:22:45.949Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_8",
+        "from": "264814067806",
+        "content": "Test back",
+        "timestamp": "2025-01-28T13:23:01.819Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_9",
+        "from": "264814067806",
+        "content": "#sprout",
+        "timestamp": "2025-01-28T13:23:12.466Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_10",
+        "from": "264814067806",
+        "content": "#sprout 07",
+        "timestamp": "2025-01-28T13:23:24.470Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_11",
+        "from": "264814067806",
+        "content": "Yes",
+        "timestamp": "2025-01-28T13:23:31.244Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_12",
+        "from": "264814067806",
+        "content": "#sprout 05",
+        "timestamp": "2025-01-28T13:23:40.512Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_13",
+        "from": "264814067806",
+        "content": "#sprout",
+        "timestamp": "2025-01-28T13:23:59.212Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_14",
+        "from": "264814067806",
+        "content": "Good afternoon",
+        "timestamp": "2025-01-28T13:24:23.472Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_15",
+        "from": "264814067806",
+        "content": "Good afternoon",
+        "timestamp": "2025-01-28T13:24:46.865Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_16",
+        "from": "264814067806",
+        "content": "Good evening",
+        "timestamp": "2025-01-28T13:26:41.519Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_17",
+        "from": "264814067806",
+        "content": "Hello",
+        "timestamp": "2025-01-28T13:31:11.756Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_18",
+        "from": "264814067806",
+        "content": "Good afternoon",
+        "timestamp": "2025-01-28T13:31:28.734Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_19",
+        "from": "264814067806",
+        "content": "#sprout",
+        "timestamp": "2025-01-28T13:31:40.897Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_20",
+        "from": "264814067806",
+        "content": "#sprout w10",
+        "timestamp": "2025-01-28T13:31:59.131Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_21",
+        "from": "264814067806",
+        "content": "Yes",
+        "timestamp": "2025-01-28T13:32:05.741Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_22",
+        "from": "264814067806",
+        "content": "Good day I have an issue",
+        "timestamp": "2025-01-28T13:34:14.955Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_23",
+        "from": "264814067806",
+        "content": "Hi",
+        "timestamp": "2025-01-28T13:38:42.703Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_24",
+        "from": "264814067806",
+        "content": "Hi",
+        "timestamp": "2025-01-28T13:38:51.698Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_25",
+        "from": "264814067806",
+        "content": "Hello",
+        "timestamp": "2025-01-28T13:39:07.312Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_26",
+        "from": "264814067806",
+        "content": "Goodday",
+        "timestamp": "2025-01-28T13:40:00.015Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_27",
+        "from": "264814067806",
+        "content": "Good day I have a problem",
+        "timestamp": "2025-01-28T13:40:11.913Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_28",
+        "from": "264814067806",
+        "content": "Hello",
+        "timestamp": "2025-01-28T13:42:27.502Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_29",
+        "from": "264814067806",
+        "content": "Good day I have an issue",
+        "timestamp": "2025-01-28T13:42:45.808Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_30",
+        "from": "264814067806",
+        "content": "Test 123",
+        "timestamp": "2025-01-28T13:43:08.931Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_31",
+        "from": "264814067806",
+        "content": "Good afternoon",
+        "timestamp": "2025-01-28T13:43:30.571Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_32",
+        "from": "264814067806",
+        "content": "Hi I have an issue",
+        "timestamp": "2025-01-28T13:43:53.303Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_33",
+        "from": "264814067806",
+        "content": "Hello",
+        "timestamp": "2025-01-28T13:50:20.157Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_34",
+        "from": "264814067806",
+        "content": "Hi",
+        "timestamp": "2025-01-28T13:50:40.179Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_35",
+        "from": "264814067806",
+        "content": "hello",
+        "timestamp": "2025-01-28T13:55:07.337Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_36",
+        "from": "264814067806",
+        "content": "Good day, I'm have an issue",
+        "timestamp": "2025-01-28T13:55:44.050Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_37",
+        "from": "264814067806",
+        "content": "issue",
+        "timestamp": "2025-01-28T13:55:57.612Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_38",
+        "from": "264814067806",
+        "content": "Hi im having an issue",
+        "timestamp": "2025-01-28T13:56:12.648Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_39",
+        "from": "264814067806",
+        "content": "I have an issue",
+        "timestamp": "2025-01-28T13:56:27.323Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_40",
+        "from": "264814067806",
+        "content": "issue hello hi",
+        "timestamp": "2025-01-28T13:56:36.632Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_41",
+        "from": "264814067806",
+        "content": "Hello",
+        "timestamp": "2025-01-28T14:06:09.541Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_42",
+        "from": "264814067806",
+        "content": "Good afternoon",
+        "timestamp": "2025-01-28T14:06:35.867Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_43",
+        "from": "264814067806",
+        "content": "Good day",
+        "timestamp": "2025-01-28T14:06:55.351Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_44",
+        "from": "264814067806",
+        "content": "Good day I have an issue",
+        "timestamp": "2025-01-28T14:07:17.015Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_45",
+        "from": "264814067806",
+        "content": "I have an issue",
+        "timestamp": "2025-01-28T14:07:33.864Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_46",
+        "from": "264814067806",
+        "content": "#sprout c7",
+        "timestamp": "2025-01-28T14:08:10.146Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_47",
+        "from": "264814067806",
+        "content": "Yes",
+        "timestamp": "2025-01-28T14:08:17.734Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_48",
+        "from": "264814067806",
+        "content": "hello",
+        "timestamp": "2025-01-28T14:44:37.733Z",
+        "status": "received"
+      },
+      {
+        "id": "msg_in_49",
+        "from": "264814067806",
+        "content": "hi",
+        "timestamp": "2025-01-28T14:45:12.811Z",
+        "status": "received"
+      }
+    ],
+    "outgoing": [
+      {
+        "id": "msg_out_1",
+        "to": "264814067806",
+        "content": "test",
+        "timestamp": "2025-01-28T13:18:04.747Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_2",
+        "to": "264814067806",
+        "content": "Greetings,Please select a department by entering '#Sprout' followed by the department code (e.g., #Sprout 04)\n\n01. Cloud Department\n02. Infrastructure Department\n03. Network and Security Department\n04. Software Department\n05. Printing Department\n06. Warranty Department\n07. Other",
+        "timestamp": "2025-01-28T13:18:26.561Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_3",
+        "to": "264814067806",
+        "content": "Hi there! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:18:49.855Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_4",
+        "to": "264814067806",
+        "content": "Hi there! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:18:50.594Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_5",
+        "to": "264814067806",
+        "content": "Hello! Type #sprout to see how I can assist you today.",
+        "timestamp": "2025-01-28T13:21:25.164Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_6",
+        "to": "264814067806",
+        "content": "Hi there! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:21:55.169Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_7",
+        "to": "264814067806",
+        "content": "test 123456",
+        "timestamp": "2025-01-28T13:22:10.570Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_8",
+        "to": "264814067806",
+        "content": "Good morning! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:22:30.125Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_9",
+        "to": "264814067806",
+        "content": "Greetings,Please select a department by entering '#Sprout' followed by the department code (e.g., #Sprout 04)\n\n01. Cloud Department\n02. Infrastructure Department\n03. Network and Security Department\n04. Software Department\n05. Printing Department\n06. Warranty Department\n07. Other",
+        "timestamp": "2025-01-28T13:23:19.905Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_10",
+        "to": "264814067806",
+        "content": "Greetings,Please select a department by entering '#Sprout' followed by the department code (e.g., #Sprout 04)\n\n01. Cloud Department\n02. Infrastructure Department\n03. Network and Security Department\n04. Software Department\n05. Printing Department\n06. Warranty Department\n07. Other",
+        "timestamp": "2025-01-28T13:23:20.593Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_11",
+        "to": "264814067806",
+        "content": "Greetings, It seems none of the issues above apply to your problem. A Green Team member will call you back shortly\n\nWould you like to create a ticket for this issue? Reply with \"yes\" to proceed.",
+        "timestamp": "2025-01-28T13:23:25.511Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_12",
+        "to": "264814067806",
+        "content": "Ticket created successfully!\n\nTicket Details:\nTicket Number: OTR-152334-2801\nIssue: Other - None Specified\nStatus: Open\n\nWe will contact you shortly regarding this ticket.\n\nType #sprout to return to the main menu.",
+        "timestamp": "2025-01-28T13:23:35.676Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_13",
+        "to": "264814067806",
+        "content": "Please select an issue to generate a support ticket. A Green Team representative will contact you shortly. Example '#sprout p5'\n\nP1. Printer not turning on.\nP2. Paper jams.\nP3. Low ink or toner levels.\nP4. Printer not detecting network.\nP5. Printing quality issues.\nP6. Inability to print certain file formats.\nP7. Hardware malfunction (e.g., printer rollers).\nP8. Scanning issues.\nP9. Printer connectivity errors.\nP10. Slow print speeds.",
+        "timestamp": "2025-01-28T13:23:45.617Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_14",
+        "to": "264814067806",
+        "content": "Greetings,Please select a department by entering '#Sprout' followed by the department code (e.g., #Sprout 04)\n\n01. Cloud Department\n02. Infrastructure Department\n03. Network and Security Department\n04. Software Department\n05. Printing Department\n06. Warranty Department\n07. Other",
+        "timestamp": "2025-01-28T13:24:00.770Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_15",
+        "to": "264814067806",
+        "content": "Good afternoon! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:24:35.121Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_16",
+        "to": "264814067806",
+        "content": "Good afternoon! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:24:54.904Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_17",
+        "to": "264814067806",
+        "content": "Good evening! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:26:54.046Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_18",
+        "to": "264814067806",
+        "content": "Hi there! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:31:20.295Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_19",
+        "to": "264814067806",
+        "content": "Good afternoon! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:31:35.148Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_20",
+        "to": "264814067806",
+        "content": "Greetings,Please select a department by entering '#Sprout' followed by the department code (e.g., #Sprout 04)\n\n01. Cloud Department\n02. Infrastructure Department\n03. Network and Security Department\n04. Software Department\n05. Printing Department\n06. Warranty Department\n07. Other",
+        "timestamp": "2025-01-28T13:31:46.287Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_21",
+        "to": "264814067806",
+        "content": "Selected issue:\nW10. Contacting warranty support.\n\nWould you like to create a ticket for this issue? Reply with \"yes\" to proceed.",
+        "timestamp": "2025-01-28T13:32:01.155Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_22",
+        "to": "264814067806",
+        "content": "Ticket created successfully!\n\nTicket Details:\nTicket Number: WRT-153210-2801\nIssue: W10. Contacting warranty support.\nStatus: Open\n\nWe will contact you shortly regarding this ticket.\n\nType #sprout to return to the main menu.",
+        "timestamp": "2025-01-28T13:32:11.131Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_23",
+        "to": "264814067806",
+        "content": "Hello! 👋 I'm here to help you. Please type #sprout to see our support menu and get assistance.",
+        "timestamp": "2025-01-28T13:34:16.105Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_24",
+        "to": "264814067806",
+        "content": "test 123",
+        "timestamp": "2025-01-28T13:38:31.199Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_25",
+        "to": "264814067806",
+        "content": "test 123",
+        "timestamp": "2025-01-28T13:38:31.271Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_26",
+        "to": "264814067806",
+        "content": "hello",
+        "timestamp": "2025-01-28T13:38:34.724Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_27",
+        "to": "264814067806",
+        "content": "test",
+        "timestamp": "2025-01-28T13:42:21.677Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_28",
+        "to": "264814067806",
+        "content": "Hi there! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:42:34.387Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_29",
+        "to": "264814067806",
+        "content": "test 1234",
+        "timestamp": "2025-01-28T13:43:18.860Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_30",
+        "to": "264814067806",
+        "content": "Good afternoon! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:43:39.422Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_31",
+        "to": "264814067806",
+        "content": "test",
+        "timestamp": "2025-01-28T13:50:07.153Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_32",
+        "to": "264814067806",
+        "content": "Hi there! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:50:29.537Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_33",
+        "to": "264814067806",
+        "content": "Hello! Type #sprout to see how I can assist you today.",
+        "timestamp": "2025-01-28T13:50:51.097Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_34",
+        "to": "264814067806",
+        "content": "Hi there! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T13:55:14.067Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_35",
+        "to": "264814067806",
+        "content": "Hello! 👋 I'm here to help you. Please type #sprout to see our support menu and get assistance.",
+        "timestamp": "2025-01-28T13:56:00.412Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_36",
+        "to": "264814067806",
+        "content": "Hello! 👋 I'm here to help you. Please type #sprout to see our support menu and get assistance.",
+        "timestamp": "2025-01-28T13:56:30.205Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_37",
+        "to": "264814067806",
+        "content": "Hello! 👋 I'm here to help you. Please type #sprout to see our support menu and get assistance.",
+        "timestamp": "2025-01-28T13:56:40.449Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_38",
+        "to": "264814067806",
+        "content": "test 12344",
+        "timestamp": "2025-01-28T14:05:51.653Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_39",
+        "to": "264814067806",
+        "content": "test 12344",
+        "timestamp": "2025-01-28T14:05:52.354Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_40",
+        "to": "264814067806",
+        "content": "Hi there! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T14:06:19.318Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_41",
+        "to": "264814067806",
+        "content": "Good afternoon! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T14:06:43.978Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_42",
+        "to": "264814067806",
+        "content": "Hi there! Type #sprout to see our support menu.",
+        "timestamp": "2025-01-28T14:07:03.367Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_43",
+        "to": "264814067806",
+        "content": "Hello! 👋 I'm here to help you. Please type #sprout to see our support menu and get assistance.",
+        "timestamp": "2025-01-28T14:07:24.005Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_44",
+        "to": "264814067806",
+        "content": "Hello! 👋 I'm here to help you. Please type #sprout to see our support menu and get assistance.",
+        "timestamp": "2025-01-28T14:07:39.825Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_45",
+        "to": "264814067806",
+        "content": "Selected issue:\nC7. Inability to connect to cloud services.\n\nWould you like to create a ticket for this issue? Reply with \"yes\" to proceed.",
+        "timestamp": "2025-01-28T14:08:14.677Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_46",
+        "to": "264814067806",
+        "content": "Ticket created successfully!\n\nTicket Details:\nTicket Number: CLD-160818-2801\nIssue: C7. Inability to connect to cloud services.\nStatus: Open\n\nWe will contact you shortly regarding this ticket.\n\nType #sprout to return to the main menu.",
+        "timestamp": "2025-01-28T14:08:19.610Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_47",
+        "to": "264814067806",
+        "content": "test",
+        "timestamp": "2025-01-28T14:44:14.158Z",
+        "status": "sent"
+      },
+      {
+        "id": "msg_out_48",
+        "to": "264814067806",
+        "content": "Hello! Type #sprout to see how I can assist you today.",
+        "timestamp": "2025-01-28T14:45:19.267Z",
+        "status": "sent"
+      }
+    ]
+  }
+}

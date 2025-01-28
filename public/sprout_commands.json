@@ -1,14 +1,7 @@
 {
-    "greetings": {
-        "hello": "Hi there!",
-        "hi": "Hello! How can I assist you today?"
-    },
-    "farewells": {
-        "bye": "Goodbye! Have a great day!",
-        "see you": "See you later!"
-    },
     "Sprout": {
         "sprout": [
+            "Greetings,Please select a department by entering '#Sprout' followed by the department code (e.g., #Sprout 04)\n",
             "01. Cloud Department",
             "02. Infrastructure Department",
             "03. Network and Security Department",
@@ -20,6 +13,7 @@
     },
     "Cloud Department": {
         "01": [
+            "Please select an issue to generate a support ticket. A Green Team representative will contact you shortly. Example '#sprout c5'\n",
             "C1. Unable to access cloud storage.",
             "C2. Files not syncing properly.",
             "C3. Slow upload/download speeds.",
@@ -34,6 +28,7 @@
     },
     "Infrastructure Department": {
         "02": [
+            "Please select an issue to generate a support ticket. A Green Team representative will contact you shortly. Example '#sprout i5'\n",
             "I1. Computer running slow.",
             "I2. Network connection issues.",
             "I3. Error messages during system boot.",
@@ -48,6 +43,7 @@
     },
     "Network and Security Department": {
         "03": [
+            "Please select an issue to generate a support ticket. A Green Team representative will contact you shortly. Example '#sprout n5'\n",
             "N1. Wi-Fi connectivity problems.",
             "N2. VPN not connecting.",
             "N3. Firewall blocking access.",
@@ -62,6 +58,7 @@
     },
     "Software Department": {
         "04": [
+            "Please select an issue to generate a support ticket. A Green Team representative will contact you shortly. Example '#sprout s5'\n",
             "S1. Software crashing frequently.",
             "S2. Installation failure.",
             "S3. Licensing errors.",
@@ -76,6 +73,7 @@
     },
     "Printing Department": {
         "05": [
+            "Please select an issue to generate a support ticket. A Green Team representative will contact you shortly. Example '#sprout p5'\n",
             "P1. Printer not turning on.",
             "P2. Paper jams.",
             "P3. Low ink or toner levels.",
@@ -90,6 +88,7 @@
     },
     "Warranty Department": {
         "06": [
+            "Please select an issue to generate a support ticket. A Green Team representative will contact you shortly. Example '#sprout w5'\n",
             "W1. Warranty coverage expired.",
             "W2. Issues with warranty claims.",
             "W3. Delay in warranty service.",
@@ -102,5 +101,55 @@
             "W10. Contacting warranty support."
         ]
     },
-    "default": "I'm sorry, I don't understand that. Type 'menu' or 'sprout' to see available options."
+    "Other": {
+        "07": [
+            "Greetings, It seems none of the issues above apply to your problem. A Green Team member will call you back shortly"
+        ]
+    },
+    "default": "I'm sorry, I don't understand that. Type 'menu' or 'sprout' to see available options.",
+    "support_keywords": [
+        "issue",
+        "problem",
+        "error",
+        "trouble",
+        "broken",
+        "not working",
+        "help",
+        "assist",
+        "support",
+        "fix",
+        "repair",
+        "stuck",
+        "cant",
+        "can't",
+        "cannot",
+        "doesn't work",
+        "doesnt work",
+        "won't",
+        "wont",
+        "isn't",
+        "isnt",
+        "failed",
+        "failing",
+        "failure",
+        "wrong",
+        "incorrect",
+        "malfunction",
+        "fault",
+        "faulty"
+    ],
+    "support_greeting": "Hello! 👋 I'm here to help you. Please type #sprout to see our support menu and get assistance.",
+    "greetings": {
+        "hello": "Hi there! Type #sprout to see our support menu.",
+        "hi": "Hello! Type #sprout to see how I can assist you today.",
+        "greetings": "Greetings! Type #sprout to see our support menu.",
+        "how do you do?": "Hello! I'm doing well, thank you. Type #sprout to see how I can assist you today.",
+        "good morning": "Good morning! Type #sprout to see our support menu.",
+        "good evening": "Good evening! Type #sprout to see our support menu.",
+        "good afternoon": "Good afternoon! Type #sprout to see our support menu."
+    },
+    "farewells": {
+        "bye": "Goodbye! Have a great day!",
+        "see you": "See you later!"
+    }
 } 
